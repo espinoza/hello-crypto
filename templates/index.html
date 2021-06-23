@@ -1,17 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello, Crypto!</title>
 </head>
+
 <body>
+
   <h1>Hello, Crypto!</h1>
+
   <ul>
-    <li>Name: {{crypto['name']}}</li>
-    <li>Rank: {{crypto['rank']}}</li>
-    <li>Price (USD): {{crypto['quotes']['USD']['price']}}</li>
-    <li>Last updated: {{crypto['last_updated']}}</li>
+    <li>Name:
+      <span id="name">{{crypto['name']}}</span>
+    </li>
+    <li>Rank:
+      <span id="rank">{{crypto['rank']}}</span>
+    </li>
+    <li>Price (USD):
+      <span id="price">{{crypto['quotes']['USD']['price']}}</span>
+    </li>
+    <li>Last updated:
+      <span id="updated">{{crypto['last_updated']}}</span>
+    </li>
   </ul>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+          integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+          crossorigin="anonymous"></script>
+
+  <!-- Socket.io -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"
+          integrity="sha512-iZIBSs+gDyTH0ZhUem9eQ1t4DcEn2B9lHxfRMeGQhyNdSUz+rb+5A3ummX6DQTOIs1XK0gOteOg/LPtSo9VJ+w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- Script to update automatically -->
+  <script type="text/javascript"
+          src="{{ url_for('static', filename='script.js') }}"></script>
+
 </body>
 </html>
